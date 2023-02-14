@@ -46,11 +46,11 @@ The following image shows the web application's appearance and functionality:
 
 ![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
 
-The below is output of **12 character password**. Note the more characters length you choose, the better your chances to use all criteria of choice:
+The below is output of **12 character password** :
 
 ![The Password Generator application displays a red button to "Generate Password".](./Assets/javascript_12pw.jpg)
 
-The below is output of **128 character password**. Note the more characters length you choose, the better your chances to use all criteria of choice:
+The below is output of **128 character password** :
 
 ![The Password Generator application displays a red button to "Generate Password".](./Assets/javascript_128pw.jpg)
 

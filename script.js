@@ -27,6 +27,7 @@ let lowerCaseString = 'abcdefghijklmnopqrstuvwxyz';
 let numericString = '0123456789';
 let specialString = '@#$!^%()&*';
 let generatePasswdString = '';
+let tempString = '';
 
 // Write password to the #password input
 function writePassword() { 
@@ -52,27 +53,41 @@ function generatePassword(){
     }
   }
   let lowerChars = confirm("Do you want lower characters in your generated password?");
-    if(lowerChars){
-      generatePasswdString += lowerCaseString;
-      console.log(generatePasswdString);
-    }
+      concatStr_DecrementVar(lowerChars, lowerCaseString);
+    // if(lowerChars){
+    //   tempString += returnSingleValue(lowerCaseString);
+    //   console.log(tempString);
+    //   numOfChars--;
+    //   generatePasswdString += lowerCaseString;
+      
+    // }
   let upperChars = confirm("Do you want upper characters in your generated password?");
-    if(upperChars){
-      generatePasswdString += upperCaseString;
-      console.log(generatePasswdString);
-    }
+      concatStr_DecrementVar(upperChars, upperCaseString);
+    // if(upperChars){
+    //   tempString += returnSingleValue(upperCaseString);
+    //   console.log(tempString);
+    //   numOfChars--;
+    //   generatePasswdString += upperCaseString;
+      
+    // }
   let numericChars = confirm("Do you want numeric characters in your generated password?");
-    if(numericChars){
-      counter++;
-      generatePasswdString += numericString;
-      console.log(generatePasswdString);
-    }
+  concatStr_DecrementVar(numericChars, numericString);
+    // if(numericChars){
+    //   tempString += returnSingleValue(numericString);
+    //   console.log(tempString);
+    //   numOfChars--;
+    //   generatePasswdString += numericString;
+      
+    // }
   let specialChars = confirm("Do you want special characters in your generated password?");
-    if(specialChars){
-      counter++;
-      generatePasswdString += specialString
-      console.log(generatePasswdString);
-    }
+  concatStr_DecrementVar(specialChars, specialString);
+    // if(specialChars){
+    //   tempString += returnSingleValue(specialString);
+    //   console.log(tempString);
+    //   numOfChars--;
+    //   generatePasswdString += specialString
+    
+    // }
 
   pass = '';
     for(let i = 0; i < numOfChars; i++){
@@ -80,9 +95,48 @@ function generatePassword(){
       //https://www.geeksforgeeks.org/how-to-generate-a-random-password-using-javascript/
       // for loop
       pass += generatePasswdString.charAt(charIndex);
+      
     }
+    //pass += tempString;
+    console.log(pass);
+    console.log(tempString);
+    //var passwrd = reSufflePassword(pass, tempString);
+    //console.log(passwrd);
+    pass += tempString;
     boolValue = true;
     return pass;
+}
+
+function returnSingleValue(stringValue){
+    var strVal = Math.floor(Math.random() * stringValue.length);
+    return stringValue.charAt(strVal);
+}
+
+//Need to resuffle values to ensure suffled output
+// function reSufflePassword(tempStringValue, passwordValue){
+
+//   for(var i = 0; i<tempStringValue.length; i++){
+//     var tempChar = tempStringValue.charAt(i);
+//     var charIndex = Math.floor(Math.random() * passwordValue.length);
+//     passwordValue += tempStringValue.charAt(charIndex);
+//   }
+//   return passwordValue;
+//  // passwordValue += tempStringValue;
+
+
+// }
+
+function concatStr_DecrementVar(booleanCharsChosen, str){
+
+  if(booleanCharsChosen){
+    tempString += returnSingleValue(str);
+    console.log(tempString);
+    numOfChars--;
+    console.log(numOfChars)
+    generatePasswdString += str;
+  
+  }
+
 }
 
 // Add event listener to generate button
